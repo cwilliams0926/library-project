@@ -10,5 +10,5 @@ function Book(name, author, pageCount, read) {
 
 function addBookToLibrary(name, author, pageCount, read) {
   const book = new Book(name, author, pageCount, read);
-  myLibrary.pop(book);
+  myLibrary.push(book);
 }
