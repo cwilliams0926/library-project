@@ -19,6 +19,7 @@ addBookToLibrary("test3", "test3", 112, true);
 
 function displayBooks() {
   const tableBody = document.querySelector("#table-body");
+  tableBody.replaceChildren();
   myLibrary.forEach((book) => {
     const tableRow = document.createElement("tr");
     for (const key in book) {
