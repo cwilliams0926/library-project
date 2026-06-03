@@ -43,3 +43,8 @@ openButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   dialog.close();
 });
+
+const submitButton = document.querySelector("#submit");
+submitButton.addEventListener("click", () => {
+  preventDefault();
+});
