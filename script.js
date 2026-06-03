@@ -22,6 +22,7 @@ function displayBooks() {
   tableBody.replaceChildren();
   myLibrary.forEach((book) => {
     const tableRow = document.createElement("tr");
+    tableRow.dataset.id = book.id;
     for (const key in book) {
       if (Object.hasOwn(book, key)) {
         const tableCell = document.createElement("td");
