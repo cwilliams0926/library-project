@@ -44,7 +44,14 @@ closeButton.addEventListener("click", () => {
   dialog.close();
 });
 
-const submitButton = document.querySelector("#submit");
-submitButton.addEventListener("click", () => {
-  preventDefault();
+const submitButton = document.querySelector("#submit-button");
+submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const name = document.forms["book-form"]["name"].value;
+  const author = document.forms["book-form"]["author"].value;
+  const pageCount = document.forms["book-form"]["pageCount"].value;
+  const read = document.forms["book-form"]["read"].value;
+  addBookToLibrary(name, author, pageCount, read);
+  displayBooks();
+  dialog.close();
 });

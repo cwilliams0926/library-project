@@ -15,10 +15,10 @@
       <thead>
         <tr>
           <th scope="col">Book Name</th>
-          <th scope="col">Book ID</th>
           <th scope="col">Author</th>
           <th scope="col">Page Count</th>
           <th scope="col">Read</th>
+          <th scope="col">Book ID</th>
         </tr>
       </thead>
       <tbody id="table-body"></tbody>
@@ -26,7 +26,7 @@
     <button id="open-button">New Book</button>
     <dialog id="dialog">
       <button id="close-button">&times</button>
-      <form action="" method="dialog">
+      <form action="" method="dialog" id="book-form">
         <label for="book-name">Name:</label>
         <input type="text" id="book-name" name="name" />
         <label for="author">Author:</label>
@@ -36,11 +36,11 @@
         <fieldset>
           <legend>Read?</legend>
           <label for="read-yes">Yes</label>
-          <input type="radio" id="read-yes" name="readYes" />
+          <input type="radio" id="read-yes" name="read" value="true" />
           <label for="read-no">No</label>
-          <input type="radio" id="read-no" name="readNo" />
+          <input type="radio" id="read-no" name="read" value="false" checked />
         </fieldset>
-        <button type="submit">Submit</button>
+        <button type="submit" id="submit-button">Submit</button>
       </form>
     </dialog>
   </body>
