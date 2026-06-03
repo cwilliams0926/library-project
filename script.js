@@ -33,3 +33,9 @@ function displayBooks() {
 }
 
 displayBooks();
+
+const dialog = document.querySelector("dialog");
+const openButton = document.querySelector("#open-button");
+openButton.addEventListener("click", () => {
+  dialog.showModal();
+});

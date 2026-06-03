@@ -23,8 +23,8 @@
       </thead>
       <tbody id="table-body"></tbody>
     </table>
-    <button>New Book</button>
-    <dialog id="modal">
+    <button id="open-button">New Book</button>
+    <dialog id="dialog">
       <form action="" method="dialog">
         <label for="book-name">Name:</label>
         <input type="text" id="book-name" name="name" />
@@ -32,9 +32,13 @@
         <input type="text" id="author" name="author" />
         <label for="page-count">Page Count:</label>
         <input type="number" id="page-count" name="pageCount" />
-        <label for="read">Read?</label>
-        <input type="radio" id="read-yes" name="readYes" />
-        <input type="radio" id="read-no" name="readNo" />
+        <fieldset>
+          <legend>Read?</legend>
+          <label for="read-yes">Yes</label>
+          <input type="radio" id="read-yes" name="readYes" />
+          <label for="read-no">No</label>
+          <input type="radio" id="read-no" name="readNo" />
+        </fieldset>
       </form>
     </dialog>
   </body>
