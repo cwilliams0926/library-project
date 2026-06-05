@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(name, author, pageCount, read) {
   this.name = name;
@@ -30,6 +30,15 @@ function displayBooks() {
         tableRow.appendChild(tableCell);
       }
     }
+    const removeButton = document.createElement("button");
+    removeButton.id = "remove-button";
+    removeButton.textContent = "Remove";
+    removeButton.addEventListener("click", () => {
+      const bookID = removeButton.parentElement.dataset.id;
+      myLibrary = myLibrary.filter((book) => book.id !== bookID);
+      displayBooks();
+    });
+    tableRow.appendChild(removeButton);
     tableBody.appendChild(tableRow);
   });
 }
