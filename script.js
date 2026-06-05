@@ -8,6 +8,10 @@ function Book(name, author, pageCount, read) {
   this.id = crypto.randomUUID();
 }
 
+Book.prototype.changeReadStatus = function() {
+  this.read = !this.read;
+};
+
 function addBookToLibrary(name, author, pageCount, read) {
   const book = new Book(name, author, pageCount, read);
   myLibrary.push(book);
@@ -31,7 +35,6 @@ function displayBooks() {
       }
     }
     const removeButton = document.createElement("button");
-    removeButton.id = "remove-button";
     removeButton.textContent = "Remove";
     removeButton.addEventListener("click", () => {
       const bookID = removeButton.parentElement.dataset.id;
@@ -39,6 +42,14 @@ function displayBooks() {
       displayBooks();
     });
     tableRow.appendChild(removeButton);
+
+    const readButton = document.createElement("button");
+    readButton.textContent = "Change read status";
+    readButton.addEventListener("click", () => {
+      book.changeReadStatus();
+      displayBooks();
+    });
+    tableRow.appendChild(readButton);
     tableBody.appendChild(tableRow);
   });
 }
